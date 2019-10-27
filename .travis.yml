@@ -17,6 +17,11 @@ android:
   - extra-google-m2repository
   - extra-android-m2repository
   - sys-img-x86-android-26
+  licenses:
+    - 'android-sdk-preview-license-52d11cd2'
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
+
 script:
 - "./gradlew build connectedCheck"
 env:
