@@ -1,30 +1,25 @@
 language: android
 dist: trusty
-
 before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 cache:
   directories:
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
-    - $HOME/.android/build-cache
-
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+  - "$HOME/.android/build-cache"
 android:
   components:
-    - tools
-    - platform-tools
-    - android-26
-    - extra-google-google_play_services
-    - extra-google-m2repository
-    - extra-android-m2repository
-    - sys-img-x86-android-26
-
+  - tools
+  - platform-tools
+  - android-26
+  - extra-google-google_play_services
+  - extra-google-m2repository
+  - extra-android-m2repository
+  - sys-img-x86-android-26
 script:
-  - ./gradlew build connectedCheck
-
+- "./gradlew build connectedCheck"
 env:
   global:
-    - secure: X2GTALOgi8MJ57GET89HqxCh4kaRq0LLT0PSK3cTc38qRVYUZ39qdREF6WkoJfMvImGFylD1tdQQ5SeJDZsWfx486k5XSffxexz+XkxkxCMVj4VdTUiyLv2P4WVV8vWi9rme6QlXh4eWvQ/CzLE3XW9GDbAKfQ1xscXpbhVH1HMK7hf+oIpM8dIdwanI4so8BXqrtQBVV35jK/0S5N+Ws1odgZcaTyXc/+Z1amz+ezi6fCigcXvy+TKReIHQTgKuC11iwrEkNDVJWevYzVYxSnvPbtK3b5hPObUIHOR/4hGk2C9+GFW7JsC8w/CRHeR4U0+i02C7lOhWW0l7NWjO6VjNzNd1W17xS8N912dR3LAAdGP1c84mgt7rAcO57VHYmEZHLNUmbwcAXQ3BOCd7FAmqZuOOVFyqnbkiTokQ15yTDCWsZmFryerBI4k1HBys2wTVEW4Vz7NtnXAmoArqV/MkwjwFLwCwV0/sdKjV5k4opVmWB8RvpYS2ZL/PDIvltCfFZx+gfDaJgQmpVwWbbbRazA0GW0TucKRmwpuGaTId4UeoMhPE0Y2+k2G9knbQiIzFGp8xeZe9WGE/NUEJ5WQEQhDJdvrD2xBJKWrVdrcZpxdIUTQT7vNjmmmU7PDij/1oHnHgHGgSmGRD5VqRvlsR/GQrjhMzpAZZRq2u4DM=
-    - secure: OHeuJAx50p1N0MC/N3u6XfNkGwhc03Gm1jHU+5S2b95j1lSyTIIU3ipS3cUAGhsyZDv9gtz8mhjOOfjlAsjBYKzbJ7Phba+Yk83Y71MLWR7xJxbDaHtGjAN2+Th0rCY2VYN+L6h+VY55M6iFW2i+MEO4z9ltzxsxUbMu3KwZP1A8qOv3Rohg5PtsJX3ggrEKcUaB98WX1OKAhNxaJW4IMbboFKr83kfCwdzBzDNkhBmKJs5z6scNMMvF4K6LidBkRLbLCC6eEj3sL4MNv7+rdTPfkadByTZr83k1sEsKhJd1xrGnCqPGZf2J6okXhhDWInTm1FtZ5WOv47txE2FigGaFshJUFr+jnx85nv+SaXEMzDlbfYvRgecNzb6R10PLAH1YWr0lRoZ8cZ9x1UUnZn+c+GYSiQocInlCFl3TraWddKw9yjtDHo8Ox8xwMj9OLcucDdR0+2xkScUxBT9ru+NwBdQjRor5O7sfb7NXX3TUqvaQb/CCoVzu5Cm8KlfHkoRt/I3KWz/zL6D5RoN/qToHqZNdDGgG3wJb+ZkfHgloGkMQkkBK6y5iMMj+WW9awMcC5lhhXw1/uM++W88yLgwUOVqgCDd3TihkSz8sRAT7lflVP2RpsQtrlX1JKgu5Ajjit/PNn5i+3nBZKKNB6JEHPVOawnXo5VzY1I/OwtQ=
+  - secure: k0NsdNv78/wIoPFeB2EiJFBiwhh0q1os5edw5TttiKYEyYuvhil3M/sN6J/2IfH2VouObUpeq1rcSvc02i4xpImX0gLhJyZ2WsA9j5YyjXyvIUwMoBgK0TW7o84E1dQNY4xG80oeKUshw5fMepjJvFSuFXJjmolxJYcKZjEKQ/rp4kDj7Ibc8GyLyWjll9yBdmJHCZ1lfdzV5dJ2vsATQdrNP93F8KzMxIT/Y4MsNfK9Wb9CJ/X5oenRpWi6gl1QeipAUBERsD1HoBciG9pmSyRJkwWpO3Ypte5gReap/ECZrtvtlO6rfTtAj5zhrHonIvDZE3SWnFyzNfZuQQwLVMNmkUEwBy/2O+5UPQdY19gbFpyfNj/iwc7N4no+x8MyZ/Pf0+nY38DCiFiRX+OOWKarcxhGFgfgHy2sYbM/ygxKIkGeNC4cyBnUt+gMO/iZpO0WXASsPWIeflHCFZiSD7WUazdfjjNr6vtRrxl+XfdAqs4rEAMV8kwEPFZQih5w4yeNSFUF5cCNBIbAeHDZqYfXnJ8tyWyC7cti7Ufc0hGk2QT/XbYuPkrpOrEYadPLUQV78AaS0DKi9D7vvqZZDNye1XZL7C3jfuuLdhBMeav9jTv0XfkJ2Cy/PjP5mXyeicEpsaYBFsOH0Sz44ZBF3s7+NucZfnKbIkwb91Bg12I=
+  - secure: l2Q2Ql23Pi/WhwE4SHLGa5WBDSs3qBKc7NB1jUvMazYGv8PXRcXy2VKJquOZibT7fqUo1DS2k1mFAqa9viXGhMM/0TnPZuK6gQ86vWEZWGjoADcp8jQlKSxM0FsFWKtwkan7oS0sIllMpyo9Dy6b8CT87lk8ybTZhYaYcxNKQAaZqeXlAP43c/DyHz15ETR6ApXHNrHUFXcVNzz1owvSR+xRgJ1mRG3xtH/0Udug1J6X6AV2oD3ySmz8JNP7F7b+pThZThGLh6plqr4kN9dD1zx3i1LO74CSbrVCwvzg2gMhQzECWKjsGrK4XsOgsJataw0gaj3+n6xPzXmb5A86yX22FfpTsEKZTvUrZ6vgjYM/r5FzqUv2k88oMCN+acwQyzOJD5lH6gexPiGwJwQ5zyhi3soOcFvr+zTUOLXRRU0Ru/apP21TtJjbMhsnVHq+9p9sAgZCU3MTAqnw2O6P3nC9X0cQ5y+mwXFHUmKHbTDNsmC24+Q0inpVVlbSMH//60GTtoYPxRyyObM20Ca1nJD/3Y0Z0iHB5+tGo1agenr2i/oF09X7fHz6n91K4UT9Q3YiSOcILDbYS2SJISRffsXDn4MdgmKI4HcwuWqQmVavzrdMkY/nd1AdC7tMXd72lVl1qqCVofl9Wt6BzGjIWGKETaBGNfqNVGo92ccYCxU=
