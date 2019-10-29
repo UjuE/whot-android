@@ -47,6 +47,7 @@ env:
     - ANDROID_ABI=x86
     - EMULATOR_API_LEVEL=22
 
+
 before_install:
   - touch $HOME/.android/repositories.cfg
   - yes | sdkmanager "platforms;android-28"
