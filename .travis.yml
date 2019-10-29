@@ -33,7 +33,10 @@ before_script:
   - adb shell input keyevent 82 &
 
 script:
+  - "echo ANDROID LIST STARTING SOMETHING"
+  - "android list targets
   - "./gradlew build connectedCheck"
+  - "echo ANDROID STOP SOMETHING"
 env:
   global:
     - secure: k0NsdNv78/wIoPFeB2EiJFBiwhh0q1os5edw5TttiKYEyYuvhil3M/sN6J/2IfH2VouObUpeq1rcSvc02i4xpImX0gLhJyZ2WsA9j5YyjXyvIUwMoBgK0TW7o84E1dQNY4xG80oeKUshw5fMepjJvFSuFXJjmolxJYcKZjEKQ/rp4kDj7Ibc8GyLyWjll9yBdmJHCZ1lfdzV5dJ2vsATQdrNP93F8KzMxIT/Y4MsNfK9Wb9CJ/X5oenRpWi6gl1QeipAUBERsD1HoBciG9pmSyRJkwWpO3Ypte5gReap/ECZrtvtlO6rfTtAj5zhrHonIvDZE3SWnFyzNfZuQQwLVMNmkUEwBy/2O+5UPQdY19gbFpyfNj/iwc7N4no+x8MyZ/Pf0+nY38DCiFiRX+OOWKarcxhGFgfgHy2sYbM/ygxKIkGeNC4cyBnUt+gMO/iZpO0WXASsPWIeflHCFZiSD7WUazdfjjNr6vtRrxl+XfdAqs4rEAMV8kwEPFZQih5w4yeNSFUF5cCNBIbAeHDZqYfXnJ8tyWyC7cti7Ufc0hGk2QT/XbYuPkrpOrEYadPLUQV78AaS0DKi9D7vvqZZDNye1XZL7C3jfuuLdhBMeav9jTv0XfkJ2Cy/PjP5mXyeicEpsaYBFsOH0Sz44ZBF3s7+NucZfnKbIkwb91Bg12I=
