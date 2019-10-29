@@ -18,6 +18,7 @@ class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
         // Context of the app under test.
+        //So Instrumented test require an android system
         val appContext = InstrumentationRegistry.getTargetContext()
         assertEquals("pink.digitally.games.whot", appContext.packageName)
     }
