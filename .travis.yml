@@ -32,7 +32,7 @@ android:
 before_script:
   - android list targets
   - android list avd
-  - echo no | android create avd --force -n test -t "Google Inc.:Google APIs:28" --abi $ANDROID_ABI
+  - echo no | android create avd --force -n test -t "android-28" --abi $ANDROID_ABI --tag $ANDROID_TAG
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
@@ -49,6 +49,7 @@ env:
     - ANDROID_BUILD_TOOLS_VERSION=28.0.3
     - ANDROID_ABI=google_apis/armeabi-v7a
     - EMULATOR_API_LEVEL=22
+    - ANDROID_TAG=google_apis
 
 
 before_install:
