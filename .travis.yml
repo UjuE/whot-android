@@ -59,6 +59,9 @@ before_install:
   - mkdir "$ANDROID_HOME/licenses" || true
   - echo "d56f5187479451eabf01fb78af6dfcb131a6481e" >> "$ANDROID_HOME/licenses/android-sdk-license"
   # Install the rest of tools (e.g. avdmanager)
+  - touch $HOME/.android/repositories.cfg
+  - echo yes | sdkmanager "platforms;android-28"
+  - echo yes | sdkmanager "build-tools;28.0.3"
   - echo y | sdkmanager tools
   # Install the system image.
   - echo y | sdkmanager "system-images;android-28;default;armeabi-v7a"
