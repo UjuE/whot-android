@@ -1,0 +1,18 @@
+# Guide from https://circleci.com/docs/2.0/language-android/ P.S. This seems a lot better than travisci for android
+# The advise is to always start with the circleci version
+version: 2
+jobs:
+  build:
+    working_directory: .
+    docker:
+      - image: circleci/android:api-25-alpha
+    steps:
+      - checkout
+      - run:
+          name: Run Tests and Buld
+          command: ./gradlew build connectedCheck
+      - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
+          path: app/build/reports
+          destination: reports
+      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+          path: app/build/test-results
