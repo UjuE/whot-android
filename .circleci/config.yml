@@ -9,6 +9,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Update SDK Manager Licenses
+          command: yes | sdkmanager --licenses && yes | sdkmanager --update
+      - run:
           name: Run Tests and Buld
           command: ./gradlew build connectedCheck
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
