@@ -25,7 +25,7 @@ jobs:
           command: ls -al $ANDROID_HOME/emulator/lib64 && echo "Now for the USER" && ls -al /usr/lib || true
       - run:
           name: Launch emulator
-          command: cd $ANDROID_HOME/emulator && ./emulator -avd test -noaudio -no-boot-anim -no-window -accel on
+          command: cd $ANDROID_HOME && ./emulator -avd test -noaudio -no-boot-anim -no-window -accel on
 #          command: emulator-headless -avd test -noaudio -no-boot-anim -no-window -accel on
 #          background: true
 #      - run:
