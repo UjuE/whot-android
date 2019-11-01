@@ -25,21 +25,21 @@ jobs:
           command: ls -al $ANDROID_HOME/emulator/lib64 && echo "Now for the USER" && ls -al /usr/lib || true
       - run:
           name: Launch emulator
-          command: cd $ANDROID_HOME && ./emulator -avd test -noaudio -no-boot-anim -no-window -accel on
+          command: cd $ANDROID_HOME && ./emulator -avd test -noaudio -no-boot-anim -no-window -accel on || true
 #          command: emulator-headless -avd test -noaudio -no-boot-anim -no-window -accel on
 #          background: true
-#      - run:
-#          name: Android Dependencies
-#          command: ./gradlew androidDependencies
-#      - save_cache:
-#          paths:
-#            - ~/.gradle
-#          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-#      - run:
-#          name: Run Tests and Buld
-#          command: ./gradlew build connectedCheck --stacktrace
-#      - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
-#          path: app/build/reports
-#          destination: reports
-#      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
-#          path: app/build/test-results
+      - run:
+          name: Android Dependencies
+          command: ./gradlew androidDependencies
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - run:
+          name: Run Tests and Buld
+          command: ./gradlew clean test --stacktrace # Will do a connected check when I figure out how to.
+      - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
+          path: app/build/reports
+          destination: reports
+      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+          path: app/build/test-results

@@ -28,20 +28,12 @@ android:
     - 'google-gdk-license-.+'
 
 before_script:
-#  - android create --help avd
   - android list target
 #  - echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a
-  - emulator -avd test -no-skin -no-audio -no-window &
-  - android-wait-for-emulator
-    # Disable animations
-  - adb shell settings put global window_animation_scale 0 &
-  - adb shell settings put global transition_animation_scale 0 &
-  - adb shell settings put global animator_duration_scale 0 &
-  - adb shell input keyevent 82 &
 
 script:
   - avdmanager list targets
-  - "./gradlew build connectedCheck"
+  - "./gradlew clean test"
 
 env:
   global:
@@ -55,21 +47,5 @@ env:
 
 
 before_install:
-  # Install SDK license so Android Gradle plugin can install deps.
-#  - mkdir "$ANDROID_HOME/licenses" || true
-#  - echo "d56f5187479451eabf01fb78af6dfcb131a6481e" >> "$ANDROID_HOME/licenses/android-sdk-license"
-  # Install the rest of tools (e.g. avdmanager)
-  - touch $HOME/.android/repositories.cfg
-  - echo "Doing nothing valuable in before install"
-  - echo yes | sdkmanager "platforms;android-28"
-  - echo yes | sdkmanager "build-tools;28.0.3"
-  - echo y | sdkmanager tools
-  - sdkmanager "system-images;android-22;default;armeabi-v7a"
-  # Install the system image.
-#  - echo y | sdkmanager "system-images;android-26;default;armeabi-v7a"
-  # Create and start emulator for the script. Meant to race the install task.
-#  - echo no | avdmanager create avd --force -n emulatorApi28 -k "system-images;android-26;default;armeabi-v7a"
-  - echo "no" | avdmanager create avd -n test -k "system-images;android-22;default;armeabi-v7a"
-#  - $ANDROID_HOME/emulator/emulator -avd emulatorApi28 -no-audio -no-window &
-
+  - echo "Will need to figure out how to test Android properly"
 
