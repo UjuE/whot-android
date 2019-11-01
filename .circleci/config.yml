@@ -18,25 +18,25 @@ jobs:
           name: Setup emulator
           command: sdkmanager "system-images;android-22;default;armeabi-v7a" && echo "no" | avdmanager create avd -n test -k "system-images;android-22;default;armeabi-v7a"
       - run:
-          name: List Emulators
-          command: emulator -list-avds
-      - run:
-          name: Launch emulator
-          command: emulator -avd test -noaudio -no-boot-anim -no-window -accel on
-#          command: emulator-headless -avd test -noaudio -no-boot-anim -no-window -accel on
-          background: true
-      - run:
-          name: Android Dependencies
-          command: ./gradlew androidDependencies
-      - save_cache:
-          paths:
-            - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-      - run:
-          name: Run Tests and Buld
-          command: ./gradlew build connectedCheck --stacktrace
-      - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
-          path: app/build/reports
-          destination: reports
-      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
-          path: app/build/test-results
+          name: See everything in things
+          command: ls -al $ANDROID_HOME
+#      - run:
+#          name: Launch emulator
+#          command: emulator -avd test -noaudio -no-boot-anim -no-window -accel on
+##          command: emulator-headless -avd test -noaudio -no-boot-anim -no-window -accel on
+#          background: true
+#      - run:
+#          name: Android Dependencies
+#          command: ./gradlew androidDependencies
+#      - save_cache:
+#          paths:
+#            - ~/.gradle
+#          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+#      - run:
+#          name: Run Tests and Buld
+#          command: ./gradlew build connectedCheck --stacktrace
+#      - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
+#          path: app/build/reports
+#          destination: reports
+#      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+#          path: app/build/test-results
