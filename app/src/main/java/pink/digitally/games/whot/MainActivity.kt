@@ -1,42 +1,24 @@
 package pink.digitally.games.whot
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity;
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-
-import kotlinx.android.synthetic.main.activity_main.*
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import pink.digitally.games.whot.databinding.ActivityPlayerRegistrationBinding
+import pink.digitally.games.whot.model.PlayerRegistrationViewModel
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        val dataBinding : ActivityPlayerRegistrationBinding =
+            DataBindingUtil.setContentView(this, R.layout.activity_player_registration)
 
-//        fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Jumping", Snackbar.LENGTH_LONG)
-//                    .setAction("Action") {  fun onClick(v: View){
-//                        println("toolbar = ${toolbar}")
-//                    }}.show()
-//        }
+        dataBinding.lifecycleOwner = this
+        dataBinding.playerRegistration = PlayerRegistrationViewModel()
+//        setSupportActionBar(toolbar)
+
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
 }
