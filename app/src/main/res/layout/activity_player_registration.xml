@@ -54,6 +54,6 @@
             android:layout_marginTop="230dp"
             android:enabled="true"
             android:text="@string/start"
-            android:onClick="@{() -> playerRegistration.clicked()}"/>
+            android:onClick="@{(v) -> playerRegistration.clicked(v)}"/>
     </RelativeLayout>
 </layout>

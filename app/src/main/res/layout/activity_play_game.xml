@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="gameObserver"
+            type="pink.digitally.games.whot.model.AndroidGameStateObserver" />
+    </data>
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/playGameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/currentPlayerName"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:padding="40dp"
+            android:text="@{String.format(`%s %s`, gameObserver.currentPlayerName, @string/player_turn)}"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="140dp"
+            android:padding="30dp">
+
+            <TextView
+                android:id="@+id/topOfPlayPile"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:padding="40dp"
+                android:text="@{gameObserver.topOfPlayPile}"
+                android:visibility="visible"
+                tools:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/drawPile"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:padding="40dp"
+                android:visibility="visible"
+                android:onClick="@{() -> gameObserver.takeACard()}"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/playerCards"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="380dp"
+            android:orientation="vertical"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"/>
+
+    </RelativeLayout>
+</layout>

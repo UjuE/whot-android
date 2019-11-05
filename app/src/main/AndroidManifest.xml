@@ -30,6 +30,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.PlayGameActivity" android:label="@string/title_play_game">
+            <intent-filter>
+                <action android:name="pink.digitally.games.whot.intent.action.PLAY_GAME" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

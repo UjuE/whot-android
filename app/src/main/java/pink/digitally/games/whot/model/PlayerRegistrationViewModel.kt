@@ -1,14 +1,17 @@
 package pink.digitally.games.whot.model
 
+import android.content.Intent
+import android.view.View
 import androidx.databinding.BaseObservable
-import androidx.databinding.BindingAdapter
+import androidx.databinding.Bindable
 import pink.digitally.games.whot.R
+import pink.digitally.games.whot.view.PlayGameActivity
 import java.util.Arrays.asList
 
 
 class PlayerRegistrationViewModel : BaseObservable() {
 
-    @get:BindingAdapter("playerOne")
+    @Bindable("playerOne")
     var playerOne: String? = null
         set(value) {
             field = value
@@ -16,18 +19,23 @@ class PlayerRegistrationViewModel : BaseObservable() {
         }
 
 
-    @get:BindingAdapter("playerTwo")
+    @Bindable("playerTwo")
     var playerTwo: String? = null
         set(value) {
             field = value
             notifyPropertyChanged(R.id.player2)
         }
 
-    fun clicked() {
+    fun clicked(v: View) {
         if (allNotEmpty(playerOne, playerTwo)){
-            //Maybe stop the transition
+            val context = v.getContext()
+            val playGameIntent = Intent(context, PlayGameActivity::class.java)
+            playGameIntent.putExtra("playerOneName", playerOne)
+            playGameIntent.putExtra("playerTwoName", playerTwo)
+            context.startActivity(playGameIntent)
         } else {
-            //Transition to another Activity
+            //Transition to another Activity. Maybe a popup activity
+            println("Set at least 2 players")
         }
     }
 
