@@ -7,4 +7,5 @@
     <string name="enter_player_name">Enter Player Name</string>
     <string name="title_activity_player_registeration">Player Registration</string>
     <string name="title_play_game">Play Game</string>
+    <string name="draw_card_description">Take a card</string>
 </resources>

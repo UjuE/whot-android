@@ -1,4 +1,4 @@
-package pink.digitally.games.whot.model
+package pink.digitally.games.whot.viewmodel
 
 import android.content.Intent
 import android.view.View
@@ -40,7 +40,6 @@ class PlayerRegistrationViewModel : BaseObservable() {
     }
 
     private fun allNotEmpty(vararg manyStrings: String?): Boolean {
-        println("Did I get here")
         return asList(*manyStrings)
             .all { !it.isNullOrBlank() }
     }

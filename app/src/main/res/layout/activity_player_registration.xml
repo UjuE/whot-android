@@ -6,7 +6,7 @@
     <data>
         <variable
             name="playerRegistration"
-            type="pink.digitally.games.whot.model.PlayerRegistrationViewModel" />
+            type="pink.digitally.games.whot.viewmodel.PlayerRegistrationViewModel" />
     </data>
 
     <RelativeLayout

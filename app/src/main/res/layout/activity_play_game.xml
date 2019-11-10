@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <import type="pink.digitally.games.whot.view.bindingadapter.BindingAdapters" />
 
         <variable
             name="gameObserver"
-            type="pink.digitally.games.whot.model.AndroidGameStateObserver" />
+            type="pink.digitally.games.whot.viewmodel.PassThePhoneGamePlayViewModel" />
+
     </data>
 
     <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/playGameContainer"
+        android:id="@+id/playGameContFainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -18,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:padding="40dp"
-            android:text="@{String.format(`%s %s`, gameObserver.currentPlayerName, @string/player_turn)}"
+            android:text="@{gameObserver.currentPlayerName}"
             android:visibility="visible"
             tools:visibility="visible" />
 
@@ -31,31 +34,34 @@
             <TextView
                 android:id="@+id/topOfPlayPile"
                 android:layout_width="0dp"
-                android:layout_weight="0.3"
                 android:layout_height="match_parent"
+                android:layout_weight="0.3"
                 android:padding="40dp"
-                android:text="@{gameObserver.topOfPlayPile}"
+                android:text="@{gameObserver.topOfPlayDeck}"
                 android:visibility="visible"
                 tools:visibility="visible" />
 
             <ImageButton
                 android:id="@+id/drawPile"
                 android:layout_width="0dp"
-                android:layout_weight="0.3"
                 android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:contentDescription="@string/draw_card_description"
+                android:onClick="@{() -> gameObserver.takeACard()}"
                 android:padding="40dp"
                 android:visibility="visible"
-                android:onClick="@{() -> gameObserver.takeACard()}"
                 tools:visibility="visible" />
 
         </LinearLayout>
-        <LinearLayout
+
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/playerCards"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginTop="380dp"
             android:orientation="vertical"
-            android:scrollbarAlwaysDrawHorizontalTrack="true"/>
-
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            adapter="@{gameObserver.recyclerViewAdaptor()}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
     </RelativeLayout>
 </layout>
