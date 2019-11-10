@@ -21,7 +21,7 @@ class GameStateDetailsChangeObserver(
 
         if (!t.gameState.equals(GameState.ENDED)) {
             val currentPlayer = t.currentPlayer!!
-            Log.i(TAG, "The current player should be ${currentPlayer.playerName}")
+            Log.i(TAG, "The current player is ${currentPlayer.playerName}")
 
             binding.currentPlayerName.text = currentPlayer.playerName
             binding.topOfPlayPile.text = t.getTopOfPlayDeck().toString()
@@ -31,7 +31,7 @@ class GameStateDetailsChangeObserver(
                 currentPlayer.cards
             )
         } else {
-            Log.i(TAG, "The game has ended. The winner is ${t.winner}")
+            Log.i(TAG, "The game has ended. The winner is ${t.winner!!.playerName}")
         }
     }
 }
