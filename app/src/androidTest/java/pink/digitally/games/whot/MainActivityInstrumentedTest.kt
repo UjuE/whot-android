@@ -11,7 +11,6 @@ import androidx.test.espresso.assertion.ViewAssertions.selectedDescendantsMatch
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
-import org.hamcrest.core.IsNot.not
 import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
@@ -23,7 +22,7 @@ class MainActivityInstrumentedTest {
 
     @Rule
     @JvmField
-    val rule = ActivityTestRule<MainActivity>(MainActivity::class.java);
+    val rule = ActivityTestRule<MainActivity>(MainActivity::class.java)
 
     @Test
     @Ignore("I have not decided what this should do.")
