@@ -14,21 +14,22 @@
     <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/playGameContFainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#fff">
 
         <TextView
             android:id="@+id/currentPlayerName"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:padding="40dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
             android:text="@{gameObserver.currentPlayerName}"
             android:visibility="visible"
             tools:visibility="visible" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_marginTop="140dp"
+            android:layout_height="290dp"
+            android:layout_marginTop="80dp"
             android:padding="30dp">
 
             <TextView
@@ -48,7 +49,9 @@
                 android:layout_weight="0.3"
                 android:contentDescription="@string/draw_card_description"
                 android:onClick="@{() -> gameObserver.takeACard()}"
-                android:padding="40dp"
+                android:src="@mipmap/whotback"
+                android:background="#fff"
+                android:scaleType="fitCenter"
                 android:visibility="visible"
                 tools:visibility="visible" />
 

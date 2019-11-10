@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProviders
 import pink.digitally.games.whot.R
 import pink.digitally.games.whot.data.AndroidGameStateObserver
 import pink.digitally.games.whot.data.PassThePhoneGameStateDetails
-import pink.digitally.games.whot.databinding.ActivityPlayGameBinding
+import pink.digitally.games.whot.databinding.ActivityPassPhonePlayGameBinding
 import pink.digitally.games.whot.model.WhotPlayer
 import pink.digitally.games.whot.view.observer.GameStateDetailsChangeObserver
 import pink.digitally.games.whot.viewmodel.PassThePhoneGamePlayViewModel
@@ -25,8 +25,8 @@ class PlayGameActivity : AppCompatActivity() {
         val playerOneName = intent.getStringExtra("playerOneName")
         val playerTwoName = intent.getStringExtra("playerTwoName")
 
-        val binding: ActivityPlayGameBinding = DataBindingUtil
-            .setContentView(this, R.layout.activity_play_game)
+        val binding: ActivityPassPhonePlayGameBinding = DataBindingUtil
+            .setContentView(this, R.layout.activity_pass_phone_play_game)
 
         binding.lifecycleOwner = this
         binding.gameObserver = passThePhoneGamePlayViewModel
