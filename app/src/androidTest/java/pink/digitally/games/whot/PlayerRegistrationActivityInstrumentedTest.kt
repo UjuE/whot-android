@@ -15,14 +15,15 @@ import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import pink.digitally.games.whot.view.PlayerRegistrationActivity
 
 
 @RunWith(AndroidJUnit4::class)
-class MainActivityInstrumentedTest {
+class PlayerRegistrationActivityInstrumentedTest {
 
     @Rule
     @JvmField
-    val rule = ActivityTestRule<MainActivity>(MainActivity::class.java)
+    val rule = ActivityTestRule<PlayerRegistrationActivity>(PlayerRegistrationActivity::class.java)
 
     @Test
     @Ignore("I have not decided what this should do.")
@@ -98,8 +99,6 @@ class MainActivityInstrumentedTest {
 
         assertThat(startButton, isEnabled())
     }
-
-
 
     private fun hasHint(expectedHint: String): ViewAssertion? {
         return ViewAssertion { view, _ -> assertThat(view, withHint(expectedHint)) }
