@@ -22,8 +22,9 @@ class PlayGameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val intent = getIntent()
-        val playerOneName = intent.getStringExtra("playerOneName")
-        val playerTwoName = intent.getStringExtra("playerTwoName")
+        val players = intent.getStringArrayExtra("players")
+            .map { name -> WhotPlayer(name) }
+            .toList()
 
         val binding: ActivityPassPhonePlayGameBinding = DataBindingUtil
             .setContentView(this, R.layout.activity_pass_phone_play_game)
@@ -38,7 +39,7 @@ class PlayGameActivity : AppCompatActivity() {
             GameStateDetailsChangeObserver(binding, passThePhoneGamePlayViewModel))
 
         WhotGamePlay.withDefaults()
-            .withPlayers(WhotPlayer(playerOneName), WhotPlayer(playerTwoName))
+            .withPlayers(players)
             .withGameStateObserver(AndroidGameStateObserver(passThePhoneGamePlayViewModel.gameStateModel))
             .build()
             .startGame()

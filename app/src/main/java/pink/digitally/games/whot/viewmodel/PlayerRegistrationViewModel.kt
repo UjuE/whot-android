@@ -30,8 +30,7 @@ class PlayerRegistrationViewModel : BaseObservable() {
         if (allNotEmpty(playerOne, playerTwo)){
             val context = v.getContext()
             val playGameIntent = Intent(context, PlayGameActivity::class.java)
-            playGameIntent.putExtra("playerOneName", playerOne)
-            playGameIntent.putExtra("playerTwoName", playerTwo)
+            playGameIntent.putExtra("players", arrayOf(playerOne, playerTwo))
             context.startActivity(playGameIntent)
         } else {
             //Transition to another Activity. Maybe a popup activity

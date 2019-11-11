@@ -16,22 +16,22 @@ class GameStateDetailsChangeObserver(
 
     private val TAG = "GameStateDetailsChange"
 
-    override fun onChanged(t: GameStateDetails) {
+    override fun onChanged(gameStateDetails: GameStateDetails) {
         Log.i(TAG, "Game State Changed")
 
-        if (!t.gameState.equals(GameState.ENDED)) {
-            val currentPlayer = t.currentPlayer!!
+        if (!gameStateDetails.gameState.equals(GameState.ENDED)) {
+            val currentPlayer = gameStateDetails.currentPlayer!!
             Log.i(TAG, "The current player is ${currentPlayer.playerName}")
 
             binding.currentPlayerName.text = currentPlayer.playerName
-            binding.topOfPlayPile.text = t.getTopOfPlayDeck().toString()
+            binding.topOfPlayPile.text = gameStateDetails.getTopOfPlayDeck().toString()
             binding.playerCards.adapter = WhotCardAdapter(
-                MutableLiveData<GameStateDetails>().apply { value = t },
+                MutableLiveData<GameStateDetails>().apply { value = gameStateDetails },
                 passThePhoneGamePlayViewModel.observableDelegate,
                 currentPlayer.cards
             )
         } else {
-            Log.i(TAG, "The game has ended. The winner is ${t.winner!!.playerName}")
+            Log.i(TAG, "The game has ended. The winner is ${gameStateDetails.winner!!.playerName}")
         }
     }
 }
