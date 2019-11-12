@@ -17,7 +17,18 @@ object WhotCardToDrawable {
         WhotCard.whotCard(WhotNumber.FOUR, WhotShape.STAR) to R.mipmap.four_star,
         WhotCard.whotCard(WhotNumber.FIVE, WhotShape.STAR) to R.mipmap.five_star,
         WhotCard.whotCard(WhotNumber.SEVEN, WhotShape.STAR) to R.mipmap.seven_star,
-        WhotCard.whotCard(WhotNumber.EIGHT, WhotShape.STAR) to R.mipmap.eight_star
+        WhotCard.whotCard(WhotNumber.EIGHT, WhotShape.STAR) to R.mipmap.eight_star,
+        
+        WhotCard.whotCard(WhotNumber.ONE, WhotShape.SQUARE) to R.mipmap.one_square,
+        WhotCard.whotCard(WhotNumber.TWO, WhotShape.SQUARE) to R.mipmap.two_square,
+        WhotCard.whotCard(WhotNumber.THREE, WhotShape.SQUARE) to R.mipmap.three_square,
+        WhotCard.whotCard(WhotNumber.FIVE, WhotShape.SQUARE) to R.mipmap.five_square,
+        WhotCard.whotCard(WhotNumber.SEVEN, WhotShape.SQUARE) to R.mipmap.seven_square,
+        WhotCard.whotCard(WhotNumber.TEN, WhotShape.SQUARE) to R.mipmap.ten_square,
+        WhotCard.whotCard(WhotNumber.ELEVEN, WhotShape.SQUARE) to R.mipmap.eleven_square,
+        WhotCard.whotCard(WhotNumber.THIRTEEN, WhotShape.SQUARE) to R.mipmap.thirteen_square,
+        WhotCard.whotCard(WhotNumber.FOURTEEN, WhotShape.SQUARE) to R.mipmap.fourteen_square
+
     )
 
     fun drawableOf(whotCardWithNumberAndShape: WhotCardWithNumberAndShape): Int {
