@@ -32,13 +32,14 @@
             android:layout_marginTop="80dp"
             android:padding="30dp">
 
-            <TextView
+            <ImageButton
                 android:id="@+id/topOfPlayPile"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
                 android:padding="40dp"
-                android:text="@{gameObserver.topOfPlayDeck}"
+                android:background="#fff"
+                android:src="@{gameObserver.topOfPlayDeck}"
                 android:visibility="visible"
                 tools:visibility="visible" />
 
@@ -65,6 +66,6 @@
             android:orientation="vertical"
             android:scrollbarAlwaysDrawHorizontalTrack="true"
             adapter="@{gameObserver.recyclerViewAdaptor()}"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
     </RelativeLayout>
 </layout>

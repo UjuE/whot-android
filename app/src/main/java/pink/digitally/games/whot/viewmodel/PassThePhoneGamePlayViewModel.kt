@@ -1,5 +1,6 @@
 package pink.digitally.games.whot.viewmodel
 
+import android.util.Log
 import android.view.View
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
@@ -8,10 +9,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import pink.digitally.games.whot.R
 import pink.digitally.games.whot.model.GameStateDetails
+import pink.digitally.games.whot.utils.WhotCardToDrawable
 import pink.digitally.games.whot.view.adapter.WhotCardAdapter
 import pink.digitally.games.whot.whotcore.events.TakeCardPlayerEvent
 
 class PassThePhoneGamePlayViewModel() : Observable, ViewModel() {
+    private val TAG = "PassPhoneViewModel"
     val observableDelegate = BaseObservable()
     val gameStateModel: MutableLiveData<GameStateDetails> by lazy {
         MutableLiveData<GameStateDetails>()
@@ -42,16 +45,15 @@ class PassThePhoneGamePlayViewModel() : Observable, ViewModel() {
     @get:Bindable
     val currentPlayerName: String
         get() {
-            println("Current Player Name = ${gameStateModel.value!!.currentPlayer!!.playerName}")
+            Log.i(TAG,"Current Player Name = ${gameStateModel.value!!.currentPlayer!!.playerName}")
             return gameStateModel.value!!.currentPlayer!!.playerName
         }
 
     //This could be image details
     @Bindable
-    fun getTopOfPlayDeck(): String {
-        println("Top of Card = ${gameStateModel.value!!.getTopOfPlayDeck()}")
-        return gameStateModel.value!!.getTopOfPlayDeck()
-            .toString()
+    fun getTopOfPlayDeck(): Int {
+        Log.i(TAG,"Top of Card = ${gameStateModel.value!!.getTopOfPlayDeck()}")
+        return WhotCardToDrawable.drawableOf(gameStateModel.value!!.getTopOfPlayDeck())
     }
 
     fun recyclerViewAdaptor(): WhotCardAdapter {
