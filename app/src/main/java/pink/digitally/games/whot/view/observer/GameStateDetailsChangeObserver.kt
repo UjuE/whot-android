@@ -20,7 +20,6 @@ class GameStateDetailsChangeObserver(
     override fun onChanged(gameStateDetails: GameStateDetails) {
         Log.i(TAG, "Game State Changed")
 
-        if (!gameStateDetails.gameState.equals(GameState.ENDED)) {
             val currentPlayer = gameStateDetails.currentPlayer!!
             val whotCard = gameStateDetails.getTopOfPlayDeck()
             Log.i(TAG, "The current player is ${currentPlayer.playerName}")
@@ -33,7 +32,8 @@ class GameStateDetailsChangeObserver(
                 passThePhoneGamePlayViewModel.observableDelegate,
                 currentPlayer.cards
             )
-        } else {
+
+        if(GameState.ENDED == gameStateDetails.gameState) {
             Log.i(TAG, "The game has ended. The winner is ${gameStateDetails.winner!!.playerName}")
         }
     }
