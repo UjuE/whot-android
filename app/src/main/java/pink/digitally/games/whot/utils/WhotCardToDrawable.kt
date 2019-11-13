@@ -27,7 +27,17 @@ object WhotCardToDrawable {
         WhotCard.whotCard(WhotNumber.TEN, WhotShape.SQUARE) to R.mipmap.ten_square,
         WhotCard.whotCard(WhotNumber.ELEVEN, WhotShape.SQUARE) to R.mipmap.eleven_square,
         WhotCard.whotCard(WhotNumber.THIRTEEN, WhotShape.SQUARE) to R.mipmap.thirteen_square,
-        WhotCard.whotCard(WhotNumber.FOURTEEN, WhotShape.SQUARE) to R.mipmap.fourteen_square
+        WhotCard.whotCard(WhotNumber.FOURTEEN, WhotShape.SQUARE) to R.mipmap.fourteen_square,
+       
+        WhotCard.whotCard(WhotNumber.ONE, WhotShape.CROSS) to R.mipmap.one_cross,
+        WhotCard.whotCard(WhotNumber.TWO, WhotShape.CROSS) to R.mipmap.two_cross,
+        WhotCard.whotCard(WhotNumber.THREE, WhotShape.CROSS) to R.mipmap.three_cross,
+        WhotCard.whotCard(WhotNumber.FIVE, WhotShape.CROSS) to R.mipmap.five_cross,
+        WhotCard.whotCard(WhotNumber.SEVEN, WhotShape.CROSS) to R.mipmap.seven_cross,
+        WhotCard.whotCard(WhotNumber.TEN, WhotShape.CROSS) to R.mipmap.ten_cross,
+        WhotCard.whotCard(WhotNumber.ELEVEN, WhotShape.CROSS) to R.mipmap.eleven_cross,
+        WhotCard.whotCard(WhotNumber.THIRTEEN, WhotShape.CROSS) to R.mipmap.thirteen_cross,
+        WhotCard.whotCard(WhotNumber.FOURTEEN, WhotShape.CROSS) to R.mipmap.fourteen_cross
 
     )
 
