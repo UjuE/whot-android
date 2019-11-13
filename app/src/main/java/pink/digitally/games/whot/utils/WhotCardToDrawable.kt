@@ -37,7 +37,33 @@ object WhotCardToDrawable {
         WhotCard.whotCard(WhotNumber.TEN, WhotShape.CROSS) to R.mipmap.ten_cross,
         WhotCard.whotCard(WhotNumber.ELEVEN, WhotShape.CROSS) to R.mipmap.eleven_cross,
         WhotCard.whotCard(WhotNumber.THIRTEEN, WhotShape.CROSS) to R.mipmap.thirteen_cross,
-        WhotCard.whotCard(WhotNumber.FOURTEEN, WhotShape.CROSS) to R.mipmap.fourteen_cross
+        WhotCard.whotCard(WhotNumber.FOURTEEN, WhotShape.CROSS) to R.mipmap.fourteen_cross,
+
+        WhotCard.whotCard(WhotNumber.ONE, WhotShape.TRIANGLE) to R.mipmap.one_triangle,
+        WhotCard.whotCard(WhotNumber.TWO, WhotShape.TRIANGLE) to R.mipmap.two_triangle,
+        WhotCard.whotCard(WhotNumber.THREE, WhotShape.TRIANGLE) to R.mipmap.three_triangle,
+        WhotCard.whotCard(WhotNumber.FOUR, WhotShape.TRIANGLE) to R.mipmap.four_triangle,
+        WhotCard.whotCard(WhotNumber.FIVE, WhotShape.TRIANGLE) to R.mipmap.five_triangle,
+        WhotCard.whotCard(WhotNumber.SEVEN, WhotShape.TRIANGLE) to R.mipmap.seven_triangle,
+        WhotCard.whotCard(WhotNumber.EIGHT, WhotShape.TRIANGLE) to R.mipmap.eight_triangle,
+        WhotCard.whotCard(WhotNumber.TEN, WhotShape.TRIANGLE) to R.mipmap.ten_triangle,
+        WhotCard.whotCard(WhotNumber.ELEVEN, WhotShape.TRIANGLE) to R.mipmap.eleven_triangle,
+        WhotCard.whotCard(WhotNumber.TWELVE, WhotShape.TRIANGLE) to R.mipmap.twelve_triangle,
+        WhotCard.whotCard(WhotNumber.THIRTEEN, WhotShape.TRIANGLE) to R.mipmap.thirteen_triangle,
+        WhotCard.whotCard(WhotNumber.FOURTEEN, WhotShape.TRIANGLE) to R.mipmap.fourteen_triangle,
+
+        WhotCard.whotCard(WhotNumber.ONE, WhotShape.CIRCLE) to R.mipmap.one_circle,
+        WhotCard.whotCard(WhotNumber.TWO, WhotShape.CIRCLE) to R.mipmap.two_circle,
+        WhotCard.whotCard(WhotNumber.THREE, WhotShape.CIRCLE) to R.mipmap.three_circle,
+        WhotCard.whotCard(WhotNumber.FOUR, WhotShape.CIRCLE) to R.mipmap.four_circle,
+        WhotCard.whotCard(WhotNumber.FIVE, WhotShape.CIRCLE) to R.mipmap.five_circle,
+        WhotCard.whotCard(WhotNumber.SEVEN, WhotShape.CIRCLE) to R.mipmap.seven_circle,
+        WhotCard.whotCard(WhotNumber.EIGHT, WhotShape.CIRCLE) to R.mipmap.eight_circle,
+        WhotCard.whotCard(WhotNumber.TEN, WhotShape.CIRCLE) to R.mipmap.ten_circle,
+        WhotCard.whotCard(WhotNumber.ELEVEN, WhotShape.CIRCLE) to R.mipmap.eleven_circle,
+        WhotCard.whotCard(WhotNumber.TWELVE, WhotShape.CIRCLE) to R.mipmap.twelve_circle,
+        WhotCard.whotCard(WhotNumber.THIRTEEN, WhotShape.CIRCLE) to R.mipmap.thirteen_circle,
+        WhotCard.whotCard(WhotNumber.FOURTEEN, WhotShape.CIRCLE) to R.mipmap.fourteen_circle
 
     )
 

@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val playerRegistrationActivity = Intent(applicationContext, PlayerRegistrationActivity::class.java)
-        applicationContext.startActivity(playerRegistrationActivity)
+        startActivity(playerRegistrationActivity)
 
     }
 }
