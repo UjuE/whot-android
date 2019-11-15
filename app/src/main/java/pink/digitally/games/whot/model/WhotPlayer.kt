@@ -1,11 +1,13 @@
 package pink.digitally.games.whot.model
 
+import android.util.Log
 import pink.digitally.games.whot.whotcore.GameMediator
 import pink.digitally.games.whot.whotcore.Player
 import pink.digitally.games.whot.whotcore.WhotCardWithNumberAndShape
 import pink.digitally.games.whot.whotcore.events.PlayerEvent
 
 class WhotPlayer(val name: String) : Player {
+    private val TAG = "WhotPlayer"
     private var gameMediator: GameMediator? = null
     private val cards = ArrayList<WhotCardWithNumberAndShape?>()
 
@@ -30,7 +32,7 @@ class WhotPlayer(val name: String) : Player {
     }
 
     override fun play(playerEvent: PlayerEvent){
-        println("${name} is performing event ${playerEvent.playerEventType}")
+        Log.d(TAG,"${name} is performing event ${playerEvent.playerEventType}")
         this.mediator!!.play(this, playerEvent)
     }
 
