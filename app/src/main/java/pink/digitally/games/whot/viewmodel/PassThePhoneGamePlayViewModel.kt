@@ -1,7 +1,6 @@
 package pink.digitally.games.whot.viewmodel
 
 import android.util.Log
-import android.view.View
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
 import androidx.databinding.Observable

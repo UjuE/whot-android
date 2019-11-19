@@ -40,7 +40,7 @@ class AndroidGameStateObserver(val gameStateDetails: MutableLiveData<GameStateDe
     }
 
     override fun onSpecialCardPlayed(p0: Player?, p1: SpecialCardPlayedEvent?) {
-        Log.i(TAG, "${p0?.playerName} played a ${p1} card so ${p1?.description}")
+        Log.i(TAG, "${p0?.playerName} played a ${p1} card so ${p1?.extraDetails}")
         //A Splash screen maybe
     }
 

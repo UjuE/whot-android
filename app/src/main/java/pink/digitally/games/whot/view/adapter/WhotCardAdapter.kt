@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import pink.digitally.games.whot.R
 import pink.digitally.games.whot.model.GameStateDetails
 import pink.digitally.games.whot.utils.WhotCardToDrawable
-import pink.digitally.games.whot.whotcore.WhotCardWithNumberAndShape
+import pink.digitally.games.whot.whotcore.card.WhotCardWithNumberAndShape
 import pink.digitally.games.whot.whotcore.events.PlayCardPlayerEvent
 
 class WhotCardAdapter(

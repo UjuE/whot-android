@@ -11,7 +11,9 @@ import pink.digitally.games.whot.databinding.ActivityPassPhonePlayGameBinding
 import pink.digitally.games.whot.model.WhotPlayer
 import pink.digitally.games.whot.view.observer.GameStateDetailsChangeObserver
 import pink.digitally.games.whot.viewmodel.PassThePhoneGamePlayViewModel
+import pink.digitally.games.whot.whotcore.GameMediator
 import pink.digitally.games.whot.whotcore.WhotGamePlay
+import pink.digitally.games.whot.whotcore.events.handler.AdvancedRulesPlayEventHandler
 
 class PlayGameActivity : AppCompatActivity() {
     private val passThePhoneGamePlayViewModel by lazy {
@@ -41,6 +43,7 @@ class PlayGameActivity : AppCompatActivity() {
         WhotGamePlay.withDefaults()
             .withPlayers(players)
             .withGameStateObserver(AndroidGameStateObserver(passThePhoneGamePlayViewModel.gameStateModel))
+            .withGameMediator(GameMediator(AdvancedRulesPlayEventHandler()))
             .build()
             .startGame()
 

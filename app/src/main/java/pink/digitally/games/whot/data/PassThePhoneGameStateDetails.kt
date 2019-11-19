@@ -4,7 +4,7 @@ import pink.digitally.games.whot.model.GameStateDetails
 import pink.digitally.games.whot.state.GameState
 import pink.digitally.games.whot.whotcore.Board
 import pink.digitally.games.whot.whotcore.Player
-import pink.digitally.games.whot.whotcore.WhotCardWithNumberAndShape
+import pink.digitally.games.whot.whotcore.card.WhotCardWithNumberAndShape
 
 class PassThePhoneGameStateDetails : GameStateDetails {
     private var allPlayers: MutableCollection<Player>? = null

@@ -1,10 +1,10 @@
 package pink.digitally.games.whot.utils
 
 import pink.digitally.games.whot.R
-import pink.digitally.games.whot.whotcore.WhotCard
-import pink.digitally.games.whot.whotcore.WhotCardWithNumberAndShape
-import pink.digitally.games.whot.whotcore.WhotNumber
-import pink.digitally.games.whot.whotcore.WhotShape
+import pink.digitally.games.whot.whotcore.card.WhotCard
+import pink.digitally.games.whot.whotcore.card.WhotCardWithNumberAndShape
+import pink.digitally.games.whot.whotcore.card.WhotNumber
+import pink.digitally.games.whot.whotcore.card.WhotShape
 
 object WhotCardToDrawable {
 
