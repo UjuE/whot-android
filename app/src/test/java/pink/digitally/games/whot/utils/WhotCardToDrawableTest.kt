@@ -5,17 +5,17 @@ import org.junit.Assert.assertThat
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import pink.digitally.games.whot.R
-import pink.digitally.games.whot.whotcore.WhotCard
-import pink.digitally.games.whot.whotcore.WhotCardDeck
-import pink.digitally.games.whot.whotcore.WhotNumber
-import pink.digitally.games.whot.whotcore.WhotShape
+import pink.digitally.games.whot.whotcore.card.WhotCard.whotCard
+import pink.digitally.games.whot.whotcore.card.WhotCardDeck
+import pink.digitally.games.whot.whotcore.card.WhotNumber
+import pink.digitally.games.whot.whotcore.card.WhotShape
 
 class WhotCardToDrawableTest {
 
     @Test
     fun unknown_whot_card() {
         val drawableResource =
-            WhotCardToDrawable.drawableOf(WhotCard.whotCard(WhotNumber.THIRTEEN, WhotShape.STAR))
+            WhotCardToDrawable.drawableOf(whotCard(WhotNumber.THIRTEEN, WhotShape.STAR))
 
         assertThat(drawableResource, Is.`is`(R.mipmap.whotback))
     }
@@ -23,7 +23,7 @@ class WhotCardToDrawableTest {
     @Test
     fun twenty_whot() {
         val drawableResource =
-            WhotCardToDrawable.drawableOf(WhotCard.whotCard(WhotNumber.TWENTY, WhotShape.WHOT))
+            WhotCardToDrawable.drawableOf(whotCard(WhotNumber.TWENTY, WhotShape.WHOT))
 
         assertThat(drawableResource, Is.`is`(R.mipmap.twenty_whot))
     }
