@@ -29,6 +29,7 @@ android:
     - 'google-gdk-license-.+'
 
 before_script:
+  - yes | sdkmanager --licenses
   - sdkmanager --list
   - android list targets
 #  - echo no | android create avd --force -n test -t android-28
