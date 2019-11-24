@@ -41,4 +41,6 @@ env:
 before_install:
   - echo "Will need to figure out how to test Android properly"
   - touch $HOME/.android/repositories.cfg
+  - yes | sdkmanager "platforms;android-28"
+  - yes | sdkmanager "build-tools;28.0.3"
 
