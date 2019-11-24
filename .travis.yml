@@ -28,7 +28,7 @@ before_script:
 
 script:
   - ./gradlew clean build
-  - ./gradlew test
+  - ./gradlew connectedCheck
 
 env:
   global:
