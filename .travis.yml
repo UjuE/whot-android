@@ -6,8 +6,14 @@ android:
   components:
     - tools
     - build-tools-$ANDROID_BUILD_TOOLS_VERSION
+    - build-tools-22.0.1
+    - android-22
     - android-$ANDROID_API_LEVEL
     - extra-android-m2repository
+    - sys-img-x86-google_apis-22
+    - sys-img-armeabi-v7a-google_apis-22
+    - sys-img-armeabi-v7a-android-22
+
   licenses:
     - 'android-sdk-preview-license-52d11cd2'
     - 'android-sdk-license-.+'
