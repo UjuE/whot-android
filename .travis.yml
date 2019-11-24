@@ -1,26 +1,32 @@
 language: android
 jdk: oraclejdk8
 dist: trusty
+
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
 cache:
   directories:
     - "$HOME/.gradle/caches/"
     - "$HOME/.gradle/wrapper/"
     - "$HOME/.android/build-cache"
+
 android:
   components:
     - tools
     - platform-tools
     - build-tools-$ANDROID_BUILD_TOOLS_VERSION
     - android-$ANDROID_API_LEVEL
-    - android-$EMULATOR_API_LEVEL
+#    - android-$EMULATOR_API_LEVEL
     - extra-google-m2repository
     - extra-android-m2repository # for design library
-    - addon-google_apis-google-19 # google play services
-    - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API_LEVEL
-    - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API_LEVEL
+    - sys-img-x86-android-$ANDROID_API_LEVEL
+    - sys-img-x86-armebi-v7a-android-17
+#    - addon-google_apis-google-19 # google play services
+#    - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API_LEVEL
+#    - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API_LEVEL
+
 
   licenses:
     - 'android-sdk-preview-license-52d11cd2'
@@ -32,6 +38,7 @@ before_script:
 #  - echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a
 
 script:
+  - sdkmanager --list
   - avdmanager list targets
   - "./gradlew clean test"
 

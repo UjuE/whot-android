@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -11,7 +12,7 @@
 
     </data>
 
-    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
         android:id="@+id/playGameContFainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,8 +65,9 @@
             android:layout_height="300dp"
             android:layout_marginTop="380dp"
             android:orientation="vertical"
-            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:scrollbars="horizontal"
             adapter="@{gameObserver.recyclerViewAdaptor()}"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
     </RelativeLayout>
 </layout>

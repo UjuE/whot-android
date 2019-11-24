@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
 import pink.digitally.games.whot.R
 import pink.digitally.games.whot.data.AndroidGameStateObserver
 import pink.digitally.games.whot.data.PassThePhoneGameStateDetails
@@ -33,6 +34,7 @@ class PlayGameActivity : AppCompatActivity() {
 
         binding.lifecycleOwner = this
         binding.gameObserver = passThePhoneGamePlayViewModel
+        binding.playerCards.layoutManager = GridLayoutManager(this, 3)
 
         passThePhoneGamePlayViewModel.gameStateModel.value = PassThePhoneGameStateDetails()
 

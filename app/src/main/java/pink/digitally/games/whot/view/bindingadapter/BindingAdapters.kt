@@ -16,4 +16,5 @@ object BindingAdapters {
     @JvmStatic fun <T : RecyclerView.ViewHolder> setRecyclerViewAdapter(view: RecyclerView, adapter: RecyclerView.Adapter<T>) {
         view.adapter = adapter
     }
+
 }
