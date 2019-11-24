@@ -39,8 +39,7 @@ before_script:
 
 script:
   - sdkmanager --list
-  - avdmanager list targets
-  - "./gradlew clean test"
+  - "./gradlew clean connectedCheck"
 
 env:
   global:
